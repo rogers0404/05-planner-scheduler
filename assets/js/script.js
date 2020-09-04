@@ -2,13 +2,16 @@
 //date format for the site
 var timeFromat = "dddd, MMMM Do, YYYY";
 
+//Array of Objects for localStores data
+var list = JSON.parse(localStorage.getItem('todolist')) || [];
+
 
 /*******************************************************************/
 
 /************************* Functions *******************************/
 
 /* Load the fisrt time when the page load  */
-function startRender() {
+function start() {
    // console.log("estoy pasando por aqui por startRender");
     // load the current time, 
     displayTime();
@@ -36,5 +39,5 @@ var displayTime = function(){
 /*******************************************************************/
 
 /************************* Execution *******************************/
-startRender();
+start();
 /*******************************************************************/
