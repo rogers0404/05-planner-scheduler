@@ -4,6 +4,11 @@ var timeFromat = "dddd, MMMM Do, YYYY";
 //getting the current time (day, month, year, etc)
 var timeDay = moment(moment(), "MM/DD/YYYY");
 
+//background colors
+var bgCurrent = "bg-danger";
+var bgAfter = "bg-success";
+var bgBefore = "bg-secondary";
+
 //Array of Objects for localStores data
 var list = JSON.parse(localStorage.getItem('daySch')) || [];
 
@@ -37,13 +42,6 @@ var checkingTimeDay = function(){
     /*******************************************************************/
 
     var hourOfDay = timeDay.format("H");
-    var bgCurrent = "bg-danger";
-    var bgAfter = "bg-success";
-    var bgBefore = "bg-secondary";
-
-  /*   if(typeof hourOfDay === "string")
-        console.log("It is a string and the hour is: "+hourOfDay);
-     */
     
     for(var i = 9; i < 18; i++){
         var index = "#t-"+ i;                        // making the index into a string for each id
@@ -98,8 +96,24 @@ $(".col-10").on("click", "p", function() {
   
     //console.log(text);
 
+    var hourOfDay = timeDay.format("H");
+    var schTime = $(this).parent().parents().attr("atr");       //going from p to div .col-10 to div id=t-##
+    var id = "#t-"+schTime;
+    var tempBg = " "; 
+
+    if(parseInt(hourOfDay) === parseInt(schTime)){
+        tempBg += bgCurrent;
+    }
+    else if(parseInt(schTime) < parseInt(hourOfDay)){
+        tempBg += bgBefore;
+    } else{
+        tempBg += bgAfter;
+    }
+
+    console.log("inside listener click <p> tag: "+id + "\n BG: "+tempBg);
+
     var textInput = $("<textarea>")
-    .addClass("form-control")
+    .addClass("form-control text-dark" + tempBg)
     .val(text);
     //console.log(textInput)
   
@@ -118,6 +132,7 @@ var functionBlur =function () {
   
     // recreate p element
     var eventP = $("<p>")
+    .addClass("h-100 w-100")
     .text(text);
   
     // replace textarea with p element
