@@ -141,10 +141,10 @@ var functionBlur =function () {
             var index = "#t-"+ i;                                           // making the index into a string for each id
             index = index.trim();
             var attr = $(index).attr("atr");                                // getting the attribute atr of the element with id = "t-number"
-            var elementP = $(index).children(".col-10").children("p");     //tested with DevTool of Google Chrome 
+            var elementP = $(index).children(".col-10").children("p");      //tested with DevTool of Google Chrome 
             //console.log(elementP);
 
-            for(j=0; j<list.length; j++)
+            for(j=0; j<list.length; j++)                                    // for loop to get the list in localStore and compare to the day schedule
             {
                 if(parseInt(list[j].hourSch) === parseInt(attr)){
                     elementP.text(list[j].txtSch)
@@ -154,7 +154,6 @@ var functionBlur =function () {
            
         }
     }
-
  };
 
 // listener for clicking on saveButton
