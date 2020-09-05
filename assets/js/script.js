@@ -170,10 +170,7 @@ event.preventDefault();
 var schTime = $(this).attr("atr");
 var id = "#t-"+schTime;
 var mostParent = $(this).parents(id);
-//console.log("hour: "+schTime+" event: "+inputText.val());
 var inputText = mostParent.children(".col-10").children(".form-control");  //tested with DevTool of Google Chrome 
-//console.log(mostParent.children(".col-10").children(".form-control").val());
-//console.log("hour: "+schTime);
 
 //validating whether the textarea is empty or not... 
 if(inputText.val())
