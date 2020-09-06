@@ -30,7 +30,7 @@ Fifth Assignment in UCF Code Boot Camp
         * It was created and alert when the user is trying to save an event and the textarea is empty.
         * In the code, Using JQuery it was used the methods children, parent and parents to get access to the correspont child or parent with the purpose to manipulate the DOM with JQuery.
         * It was left the solution when the user lost the focus on the textarea and it has been clikced on whereever part of the site... the textarea remain. the intention was to create a function to work with this functionality.
-        * It has been written comments along the code to explain every task, and also the repository has been commited. 
+        * It has been written comments along the code to explain every task, and also the repository has been commited.
 
 ##Screenshots:
 
