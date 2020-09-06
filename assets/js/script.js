@@ -25,7 +25,6 @@ function start() {
     // load the localStore
     loadSchedule();
 
-
     // checking each time block whether it is the past, present or future according the hour of the day
     checkingTimeDay();
     
@@ -47,28 +46,21 @@ var checkingTimeDay = function(){
         var index = "#t-"+ i;                        // making the index into a string for each id
         index = index.trim();
         var attr = $(index).attr("atr");           // getting the attribute atr of the element with id = "t-number"
-        //console.log("attr " + attr);
-        //if(typeof attr === "string")
-            //console.log("attr " + attr);
 
         if(parseInt(hourOfDay) === parseInt(attr)){
             $(index).addClass(bgCurrent);
             $(index).children(".business-hour").addClass("text-dark bg-light m-0 p-0 w-100");
             if(list.length === 0){
                 $(index).children(".col-10").children("p").text("Current Hour");
-                //console.log("current hour "+list.length);
-                //console.log($(index).children(".col-10"));
             }
                
         }
         else if(parseInt(attr) < parseInt(hourOfDay)){
             $(index).addClass(bgBefore);
             $(index).children(".business-hour").addClass("text-dark bg-light m-0 p-0  w-100");
-            //console.log("less than " + hourOfDay);
         } else{
             $(index).addClass(bgAfter);
             $(index).children(".business-hour").addClass("text-dark bg-light m-0 p-0  w-100");
-            //console.log("future ");
         }
     }
 };
@@ -98,8 +90,6 @@ $(".col-10").on("click", "p", function() {
     var text = $(this)
     .text()
     .trim();
-  
-    //console.log(text);
 
     var hourOfDay = timeDay.format("H");
     var schTime = $(this).parent().parents().attr("atr");       //going from p to div .col-10 to div id=t-##
@@ -115,12 +105,9 @@ $(".col-10").on("click", "p", function() {
         tempBg += bgAfter;
     }
 
-    //console.log("inside listener click <p> tag: "+id + "\n BG: "+tempBg);
-
     var textInput = $("<textarea>")
     .addClass("form-control text-dark" + tempBg)
     .val(text);
-    //console.log(textInput)
   
     $(this).replaceWith(textInput);
     textInput.trigger("focus");
@@ -128,7 +115,6 @@ $(".col-10").on("click", "p", function() {
   });
 
   //Function When the focus is lost 
- // $(".col-10").on("blur", "textarea", function() {
 var functionBlur =function () {
     // get the current value/text of textarea
     var text = $(".form-control")
@@ -143,10 +129,8 @@ var functionBlur =function () {
     // replace textarea with p element
     $(".form-control").replaceWith(eventP);
 }
-    
- // });
 
-
+// function to retreive the information from localStore
  var loadSchedule = function(){
 
 /*******************************************************************/
@@ -155,20 +139,17 @@ var functionBlur =function () {
 /*  THEN the saved events persist                                  */
 /*******************************************************************/
 
-
     if(list){
         for(var i = 9; i < 18; i++){
             var index = "#t-"+ i;                                           // making the index into a string for each id
             index = index.trim();
             var attr = $(index).attr("atr");                                // getting the attribute atr of the element with id = "t-number"
             var elementP = $(index).children(".col-10").children("p");      //tested with DevTool of Google Chrome 
-            //console.log(elementP);
 
             for(j=0; j<list.length; j++)                                    // for loop to get the list in localStore and compare to the day schedule
             {
                 if(parseInt(list[j].hourSch) === parseInt(attr)){
                     elementP.text(list[j].txtSch)
-                    //console.log(list[j].txtSch);
                 }
             }
            
@@ -213,9 +194,6 @@ else
     alert("You can not save and empty event \n You must enter and event");
 }
 });
-
-
-
 
 /*******************************************************************/
 
