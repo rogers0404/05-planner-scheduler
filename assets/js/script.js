@@ -54,7 +54,12 @@ var checkingTimeDay = function(){
         if(parseInt(hourOfDay) === parseInt(attr)){
             $(index).addClass(bgCurrent);
             $(index).children(".business-hour").addClass("text-dark bg-light m-0 p-0 w-100");
-            //console.log("not equeal");
+            if(list.length === 0){
+                $(index).children(".col-10").children("p").text("Current Hour");
+                //console.log("current hour "+list.length);
+                //console.log($(index).children(".col-10"));
+            }
+               
         }
         else if(parseInt(attr) < parseInt(hourOfDay)){
             $(index).addClass(bgBefore);
@@ -110,7 +115,7 @@ $(".col-10").on("click", "p", function() {
         tempBg += bgAfter;
     }
 
-    console.log("inside listener click <p> tag: "+id + "\n BG: "+tempBg);
+    //console.log("inside listener click <p> tag: "+id + "\n BG: "+tempBg);
 
     var textInput = $("<textarea>")
     .addClass("form-control text-dark" + tempBg)
@@ -132,7 +137,7 @@ var functionBlur =function () {
   
     // recreate p element
     var eventP = $("<p>")
-    .addClass("h-100 w-100")
+    .addClass("h-100 w-100 mt-4")
     .text(text);
   
     // replace textarea with p element
@@ -163,7 +168,7 @@ var functionBlur =function () {
             {
                 if(parseInt(list[j].hourSch) === parseInt(attr)){
                     elementP.text(list[j].txtSch)
-                    console.log(list[j].txtSch);
+                    //console.log(list[j].txtSch);
                 }
             }
            
