@@ -1,38 +1,68 @@
-# 05-planner-scheduler
-5th Assignment
+
+# Planner Scheduler 
+
+## Description 
+
+Planner Scheduler is a simple calendar application that allows a user to save events for each hour of the day.
+
+It is based on HTML, CSS and Javascript, powered by JQuery and Moment.js
 
 
-URLs
+## Table of Contents
 
-Deployed Application: 
-    https://rogers0404.github.io/05-planner-scheduler/
+* [URLs](#urls)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#Contributing)
+* [License](#license)
+* [Test](#Test)
+* [Questions](#questions)
+* [Screenshots](#screenshots)
 
-GitHub Repository:
-    https://github.com/rogers0404/05-planner-scheduler.git 
-    
-    git@github.com:rogers0404/05-planner-scheduler.git 
+
+## URLs
+
+* Deployed Application: 
+    - [https://rogers0404.github.io/05-planner-scheduler/](https://rogers0404.github.io/05-planner-scheduler/) (live)
+
+* GitHub Repository:
+    - [HTTPS: https://github.com/rogers0404/05-planner-scheduler.git](https://github.com/rogers0404/05-planner-scheduler.git)
+    - [GIT: git@github.com:rogers0404/05-planner-scheduler.git](git@github.com:rogers0404/05-planner-scheduler.git)
+
+## Installation
+
+- `git clone git@github.com:rogers0404/05-planner-scheduler.git        //clone the repository and use it for your own purposes`
+- `Open index.html in a Browser`
+
+## Usage 
+
+None
+
+## Contributing
+
+* Rogers Ramirez, Github User: [rogers0404](http://github.com/rogers0404)
 
 
-Fifth Assignment in UCF Code Boot Camp
+## License
 
-1. The Task was divided in several parts to develop the application
-    - Fisrt part was divided in 6 parts to match the Acceptance Criteria
-        * It was created a function [displayTime()] to deal with the day of the week and the date on top of the site. It was used the Moment.js Libraries
-        * It was created a grid with bootstrap to work with the time blocks, 9 rows and 3 columns each row
-        * It was created a function [checkingTimeDay()] to show a colored-code for each hour of the day in the schedule planner. Grey if the hours which those are in the past, red is the current hour of the day and green for the hours which are in the future. 
-        * It was created a listener with jquery to work with and event click on a time block. For the styling the background of textarea was set with the color of the current colored-code correspondent. 
-        * It was created a listener with jquery to work with and event click on a button to save the event typed in localStore. Note, that the information of localstore is saved in a array of objects and every change is saved in the array in localstores even if there are  more than one event for the same time, it will always show the last changing.
-        *  It was created a function [loadSchedule()] to bring the information from localstore and show the current events saved in localstore
+Planner Scheduler is licensed under the
 
-    - The second part was about the styling using the libraries from bootstraps to give to the application an appearance like the mock-up in the challenge. It was used my-* for margin top and bottom, w-100 and h-100 for spacing inside the column. it was also used an icon for bootstrap [https://icons.getbootstrap.com/icons/folder-symlink-fill/] for the button.
+![v1](https://img.shields.io/static/v1?label=License&message=None&color=inactive&&style=plastic)
 
-    - The last part was organizing the code in script.js and fixing some errors in DevTools
-        * It was created and alert when the user is trying to save an event and the textarea is empty.
-        * In the code, Using JQuery it was used the methods children, parent and parents to get access to the correspont child or parent with the purpose to manipulate the DOM with JQuery.
-        * It was left the solution when the user lost the focus on the textarea and it has been clikced on whereever part of the site... the textarea remain. the intention was to create a function to work with this functionality.
-        * It has been written comments along the code to explain every task, and also the repository has been commited.
+None
 
-##Screenshots:
+## Test
+
+None
+
+## Questions
+
+If you have any questions about the application, you can check the documentation on my GitHub profile [https://github.com/rogers0404](https://github.com/rogers0404).
+
+for more information you can have a question via email [rogers.ramirez2008@gmail.com](rogers.ramirez2008@gmail.com)  .
+
+
+## Screenshots
 
 ### Screenshot 1. From the Assignment
 ![](./assets/images/image.png)
